@@ -29,38 +29,13 @@
 
 ## 📸 Screenshots
 
-### Login
 ![Login Page](phase2/screenshots/Login-page.jpeg)
 
-### Student Dashboard
-![Logged in as Student](phase2/screenshots/Logined-as-student.jpeg)
+![Coordinator Dashboard](phase2/screenshots/Logined-as-Coordinator.jpeg)
 
-### Instructor Dashboard
-![Logged in as Instructor](phase2/screenshots/Logined-as-Instructor.jpeg)
+![Assessment Management](phase2/screenshots/Adding-Assessment.jpeg)
 
-### Coordinator Dashboard
-![Logged in as Coordinator](phase2/screenshots/Logined-as-Coordinator.jpeg)
-
-### Adding an Assessment
-![Adding Assessment Form](phase2/screenshots/Adding-Assessment.jpeg)
-![Assessment Saved to Database](phase2/screenshots/Adding-to-Database-Assessment-Successfuly.png)
-
-### Updating an Assessment
-![Updating Assessment](phase2/screenshots/Updating-Assessment.jpeg)
-![Assessment Updated Successfully](phase2/screenshots/Assessment-Updated-successfuly.jpeg)
-
-### Deleting an Assessment
-![Deleting Assessment](phase2/screenshots/Deleting-Assessment.png)
-![Deleted from Database](phase2/screenshots/Delete-id_18-success-from-DB.png)
-
-### Course Comments
-![Adding a Comment as Student](phase2/screenshots/Adding-comment-successfuly.jpeg)
-![Adding a Comment as Instructor](phase2/screenshots/Adding-Instractour-comment-successfuly.png)
-![Commented as Coordinator](phase2/screenshots/Commented-as-Coordinator.jpeg)
-![Replying to a Comment](phase2/screenshots/Reply-comment.jpeg)
-
-### Workload Report
-![Workload Report – Coordinator View](phase2/screenshots/Workload%20Report-Coordinator.jpeg)
+![Workload Report](phase2/screenshots/Workload%20Report-Coordinator.jpeg)
 
 ---
 
