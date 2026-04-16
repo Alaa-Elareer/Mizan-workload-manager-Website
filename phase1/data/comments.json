@@ -1,0 +1,34 @@
+{
+  "CMPS310": {
+    "comments": [
+      {
+        "id": "1",
+        "title": "Heavy workload concern",
+        "body": "The current workload seems excessive with multiple assignments due in the same week.",
+        "author": "student1",
+        "role": "student",
+        "createdAt": "2025-03-15T10:30:00Z"
+      },
+      {
+        "id": "2",
+        "title": "Response to workload concern",
+        "body": "I understand your concern. I will adjust the due dates to spread out the assignments more evenly.",
+        "author": "instructor1",
+        "role": "instructor",
+        "createdAt": "2025-03-15T14:20:00Z"
+      }
+    ]
+  },
+  "CMPS320": {
+    "comments": [
+      {
+        "id": "1743967323897",
+        "title": "request",
+        "body": "dgsgggagadaga",
+        "author": "coordinator1",
+        "role": "coordinator",
+        "createdAt": "2025-04-06T19:22:03.897Z"
+      }
+    ]
+  }
+}

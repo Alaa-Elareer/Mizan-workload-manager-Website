@@ -1,0 +1,159 @@
+classDiagram
+    %% Entity Classes
+    class User {
+        +String id
+        +String username
+        +String password
+        +String name
+        +String role
+        +String[] courses
+    }
+    
+    class Coordinator {
+        +String program
+    }
+    
+    class Instructor {
+        +String[] courses
+    }
+    
+    class Student {
+        +String[] courses
+    }
+    
+    class Course {
+        +String id
+        +String title
+        +String program
+        +String semester
+        +String instructor
+    }
+    
+    class Assessment {
+        +String id
+        +String courseId
+        +String title
+        +String type
+        +Date dueDate
+        +Number effortHours
+        +Number weight
+        +validate()
+    }
+    
+    class Comment {
+        +String id
+        +String courseId
+        +String userId
+        +String title
+        +String body
+        +Date createdAt
+    }
+    
+    class CalendarEvent {
+        +String id
+        +String assessmentId
+        +String summary
+        +String description
+        +Date startTime
+        +Date endTime
+        +Object[] reminders
+    }
+    
+    %% Repository Classes
+    class UserRepository {
+        +getAll()
+        +getById(id)
+        +getByUsername(username)
+        +getByRole(role)
+        +verifyCredentials(username, password)
+    }
+    
+    class CourseRepository {
+        +getAll()
+        +getById(id)
+        +getByProgram(program)
+        +getByInstructor(instructorId)
+    }
+    
+    class AssessmentRepository {
+        +getAll()
+        +getById(id)
+        +getByCourse(courseId)
+        +create(assessment)
+        +update(id, data)
+        +delete(id)
+        +validateAssessment(assessment)
+    }
+    
+    class CommentRepository {
+        +getAll()
+        +getById(id)
+        +getByCourse(courseId)
+        +create(comment)
+    }
+    
+    class CalendarRepository {
+        +getStudentEvents(studentId)
+        +generateGoogleCalendar(studentId)
+    }
+    
+    %% Service Classes
+    class AuthService {
+        +login(username, password)
+        +logout()
+        +getSession()
+    }
+    
+    class CourseService {
+        +getCourses(filters)
+        +getCourseById(id)
+    }
+    
+    class AssessmentService {
+        +getAssessments(filters)
+        +getById(id)
+        +addAssessment(assessment)
+        +updateAssessment(id, data)
+        +deleteAssessment(id)
+    }
+    
+    class CommentService {
+        +getComments(courseId)
+        +addComment(data)
+    }
+    
+    class CalendarService {
+        +getCalendar(studentId)
+        +syncToGoogle(studentId)
+    }
+    
+    class ReportService {
+        +getWorkloadSummary(filters)
+    }
+    
+    %% Relationships between Entities
+    User <|-- Coordinator
+    User <|-- Instructor
+    User <|-- Student
+    
+    Course "1" -- "*" Assessment
+    Course "1" -- "*" Comment
+    User "1" -- "*" Comment
+    Assessment "1" -- "1" CalendarEvent
+    
+    %% Relationships between Repositories and Entities
+    UserRepository -- User
+    CourseRepository -- Course
+    AssessmentRepository -- Assessment
+    CommentRepository -- Comment
+    CalendarRepository -- CalendarEvent
+    
+    %% Relationships between Services and Repositories
+    AuthService --> UserRepository
+    CourseService --> CourseRepository
+    AssessmentService --> AssessmentRepository
+    CommentService --> CommentRepository
+    CalendarService --> CalendarRepository
+    CalendarService --> AssessmentRepository
+    ReportService --> CourseRepository
+    ReportService --> AssessmentRepository

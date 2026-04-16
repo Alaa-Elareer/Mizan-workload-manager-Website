@@ -1,0 +1,16 @@
+{
+  "instructor1": { "password": "pass123", "role": "instructor" },
+  "instructor2": { "password": "pass123", "role": "instructor" },
+  "instructor3": { "password": "pass123", "role": "instructor" },
+  "instructor4": { "password": "pass123", "role": "instructor" },
+
+  "coordinator1": { "password": "pass123", "role": "coordinator" },
+  "coordinator2": { "password": "pass123", "role": "coordinator" },
+  "coordinator3": { "password": "pass123", "role": "coordinator" },
+  "coordinator4": { "password": "pass123", "role": "coordinator" },
+
+  "student1": { "password": "pass123", "role": "student" },
+  "student2": { "password": "pass123", "role": "student" },
+  "student3": { "password": "pass123", "role": "student" },
+  "student4": { "password": "pass123", "role": "student" }
+}

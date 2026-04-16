@@ -1,0 +1,85 @@
+{
+  "CMPS310": {
+    "course_name": "Software Engineering",
+    "assessments": [
+      {
+        "title": "Project Phase 1",
+        "type": "Project",
+        "due_date": "2025-03-20",
+        "effort_hours": 10,
+        "weight": 15,
+        "phase": 1
+      },
+      {
+        "title": "Midterm 1",
+        "type": "Midterm",
+        "due_date": "2025-03-25",
+        "effort_hours": 8,
+        "weight": 20
+      },
+      {
+        "title": "Final Exam",
+        "type": "Final Exam",
+        "due_date": "2025-04-20",
+        "effort_hours": "10",
+        "weight": "30",
+        "phase": ""
+      },
+      {
+        "title": "Homework 3",
+        "type": "Homework",
+        "due_date": "2025-12-12",
+        "effort_hours": "8",
+        "weight": "10",
+        "phase": ""
+      }
+    ]
+  },
+  "CMPS320": {
+    "course_name": "Database Systems",
+    "assessments": [
+      {
+        "title": "Assignment 1",
+        "type": "Homework",
+        "due_date": "2025-03-15",
+        "effort_hours": 5,
+        "weight": 10
+      },
+      {
+        "title": "Midterm",
+        "type": "Midterm",
+        "due_date": "2025-03-30",
+        "effort_hours": 8,
+        "weight": 25
+      },
+      {
+        "title": "Homework 2",
+        "type": "Homework",
+        "due_date": "2025-04-04",
+        "effort_hours": "3",
+        "weight": "15",
+        "phase": ""
+      }
+    ]
+  },
+  "CMPS330": {
+    "course_name": "Computer Networks",
+    "assessments": [
+      {
+        "title": "Quiz 1",
+        "type": "Quiz",
+        "due_date": "2025-03-18",
+        "effort_hours": 3,
+        "weight": 5
+      },
+      {
+        "title": "Project",
+        "type": "Project",
+        "due_date": "2025-04-05",
+        "effort_hours": 12,
+        "weight": 30,
+        "phase": 1
+      }
+    ]
+  }
+}

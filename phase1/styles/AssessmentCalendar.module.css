@@ -1,0 +1,202 @@
+.calendar {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header button {
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.header button:hover {
+  background: #e5e5e5;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: 500;
+  color: #666;
+  padding: 0.5rem;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day {
+  min-height: 120px;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  position: relative;
+  background: white;
+}
+
+.empty {
+  background: #f9f9f9;
+}
+
+.dayNumber {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.assessment {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.assessmentContent {
+  margin-top: 0.25rem;
+}
+
+.assessmentContent strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.assessmentContent p {
+  margin: 0;
+  color: #666;
+  font-size: 0.75rem;
+}
+
+/* Assessment type styles */
+.homework {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.midterm {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.final-exam {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.project {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Sync button states */
+.syncButton {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.syncButton:hover:not(:disabled) {
+  background-color: #3367d6;
+}
+
+.syncButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.syncButton.syncing {
+  background-color: #ffa000;
+  cursor: wait;
+}
+
+.syncButton.synced {
+  background-color: #43a047;
+}
+
+.syncButton.error {
+  background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    padding: 1rem;
+  }
+
+  .day {
+    min-height: 100px;
+    font-size: 0.75rem;
+  }
+
+  .assessment {
+    font-size: 0.7rem;
+  }
+
+  .syncButton {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .header h2 {
+    font-size: 1.2rem;
+  }
+
+  .weekday {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .days {
+    gap: 2px;
+  }
+
+  .day {
+    padding: 0.25rem;
+    min-height: 80px;
+  }
+
+  .assessment {
+    margin-top: 1rem;
+    padding: 0.25rem;
+  }
+
+  .dayNumber {
+    font-size: 0.7rem;
+  }
+}
