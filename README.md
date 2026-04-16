@@ -29,12 +29,16 @@
 
 ## 📸 Screenshots
 
+### Login Page
 ![Login Page](phase2/screenshots/Login-page.jpeg)
 
+### Coordinator Dashboard
 ![Coordinator Dashboard](phase2/screenshots/Logined-as-Coordinator.jpeg)
 
+### Assessment Management
 ![Assessment Management](phase2/screenshots/Adding-Assessment.jpeg)
 
+### Workload Report
 ![Workload Report](phase2/screenshots/Workload%20Report-Coordinator.jpeg)
 
 ---
