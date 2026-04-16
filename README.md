@@ -11,7 +11,6 @@
 | Framework | Next.js 15 (App Router) |
 | Language | JavaScript (React 19) |
 | Database | SQLite via Prisma ORM |
-| Auth | JWT (jsonwebtoken) |
 | Charts | Chart.js + react-chartjs-2 |
 | Icons | Lucide React |
 
