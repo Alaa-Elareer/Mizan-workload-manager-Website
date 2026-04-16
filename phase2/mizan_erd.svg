@@ -1,0 +1,100 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Entity Boxes -->
+  <!-- User -->
+  <rect x="50" y="80" width="180" height="180" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="140" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">User</text>
+  <line x1="50" y1="115" x2="230" y2="115" stroke="#4682b4" stroke-width="2"/>
+  <text x="60" y="135" font-family="Arial" font-size="12">id: Int @id</text>
+  <text x="60" y="155" font-family="Arial" font-size="12">firstName: String</text>
+  <text x="60" y="175" font-family="Arial" font-size="12">lastName: String</text>
+  <text x="60" y="195" font-family="Arial" font-size="12">email: String @unique</text>
+  <text x="60" y="215" font-family="Arial" font-size="12">password: String</text>
+  <text x="60" y="235" font-family="Arial" font-size="12">role: String</text>
+  <text x="60" y="255" font-family="Arial" font-size="12">program: String</text>
+
+  <!-- Section -->
+  <rect x="350" y="80" width="180" height="160" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="440" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Section</text>
+  <line x1="350" y1="115" x2="530" y2="115" stroke="#4682b4" stroke-width="2"/>
+  <text x="360" y="135" font-family="Arial" font-size="12">crn: String @id</text>
+  <text x="360" y="155" font-family="Arial" font-size="12">courseCode: String</text>
+  <text x="360" y="175" font-family="Arial" font-size="12">courseName: String</text>
+  <text x="360" y="195" font-family="Arial" font-size="12">creditHours: Int</text>
+  <text x="360" y="215" font-family="Arial" font-size="12">instructorId: Int</text>
+  <text x="360" y="235" font-family="Arial" font-size="12">program: String</text>
+  <text x="360" y="255" font-family="Arial" font-size="12">semester: String</text>
+
+  <!-- Assessment -->
+  <rect x="650" y="80" width="180" height="160" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="740" y="105" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Assessment</text>
+  <line x1="650" y1="115" x2="830" y2="115" stroke="#4682b4" stroke-width="2"/>
+  <text x="660" y="135" font-family="Arial" font-size="12">id: Int @id @autoincrement()</text>
+  <text x="660" y="155" font-family="Arial" font-size="12">sectionCRN: String</text>
+  <text x="660" y="175" font-family="Arial" font-size="12">title: String</text>
+  <text x="660" y="195" font-family="Arial" font-size="12">type: String</text>
+  <text x="660" y="215" font-family="Arial" font-size="12">dueDate: DateTime</text>
+  <text x="660" y="235" font-family="Arial" font-size="12">effortHours: Int</text>
+  <text x="660" y="255" font-family="Arial" font-size="12">weight: Int</text>
+
+  <!-- Comment -->
+  <rect x="350" y="320" width="180" height="180" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="440" y="345" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Comment</text>
+  <line x1="350" y1="355" x2="530" y2="355" stroke="#4682b4" stroke-width="2"/>
+  <text x="360" y="375" font-family="Arial" font-size="12">id: Int @id @autoincrement()</text>
+  <text x="360" y="395" font-family="Arial" font-size="12">sectionCRN: String</text>
+  <text x="360" y="415" font-family="Arial" font-size="12">authorId: Int</text>
+  <text x="360" y="435" font-family="Arial" font-size="12">title: String</text>
+  <text x="360" y="455" font-family="Arial" font-size="12">content: String</text>
+  <text x="360" y="475" font-family="Arial" font-size="12">createdDate: DateTime</text>
+  <text x="360" y="495" font-family="Arial" font-size="12">replyToCommentId: Int?</text>
+
+  <!-- AssessmentType -->
+  <rect x="650" y="320" width="180" height="80" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="740" y="345" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">AssessmentType</text>
+  <line x1="650" y1="355" x2="830" y2="355" stroke="#4682b4" stroke-width="2"/>
+  <text x="660" y="375" font-family="Arial" font-size="12">id: String @id</text>
+  <text x="660" y="395" font-family="Arial" font-size="12">label: String</text>
+
+  <!-- Semester -->
+  <rect x="50" y="320" width="180" height="100" rx="5" fill="#f0f8ff" stroke="#4682b4" stroke-width="2"/>
+  <text x="140" y="345" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Semester</text>
+  <line x1="50" y1="355" x2="230" y2="355" stroke="#4682b4" stroke-width="2"/>
+  <text x="60" y="375" font-family="Arial" font-size="12">id: String @id</text>
+  <text x="60" y="395" font-family="Arial" font-size="12">label: String</text>
+  <text x="60" y="415" font-family="Arial" font-size="12">isDefault: Boolean</text>
+
+  <!-- Relationships -->
+  <!-- User-Section (many-to-many) -->
+  <line x1="230" y1="160" x2="350" y2="160" stroke="#4682b4" stroke-width="2"/>
+  <text x="290" y="140" font-family="Arial" font-size="12" text-anchor="middle">M:N</text>
+  <text x="240" y="155" font-family="Arial" font-size="10">registeredSections</text>
+  <text x="330" y="155" font-family="Arial" font-size="10">students</text>
+
+  <!-- Section-Assessment (one-to-many) -->
+  <line x1="530" y1="140" x2="650" y2="140" stroke="#4682b4" stroke-width="2"/>
+  <circle cx="530" cy="140" r="5" fill="#4682b4"/>
+  <circle cx="650" cy="140" r="5" fill="white" stroke="#4682b4" stroke-width="2"/>
+  <text x="590" y="130" font-family="Arial" font-size="12" text-anchor="middle">1:N</text>
+  <text x="590" y="155" font-family="Arial" font-size="10">assessments</text>
+
+  <!-- Section-Comment (one-to-many) -->
+  <line x1="440" y1="240" x2="440" y2="320" stroke="#4682b4" stroke-width="2"/>
+  <circle cx="440" cy="240" r="5" fill="#4682b4"/>
+  <circle cx="440" cy="320" r="5" fill="white" stroke="#4682b4" stroke-width="2"/>
+  <text x="420" y="280" font-family="Arial" font-size="12" text-anchor="middle">1:N</text>
+  <text x="460" y="280" font-family="Arial" font-size="10">comments</text>
+
+  <!-- User-Comment (one-to-many) -->
+  <path d="M 140,260 Q 140,410 350,410" stroke="#4682b4" stroke-width="2" fill="transparent"/>
+  <circle cx="140" cy="260" r="5" fill="#4682b4"/>
+  <circle cx="350" cy="410" r="5" fill="white" stroke="#4682b4" stroke-width="2"/>
+  <text x="240" y="380" font-family="Arial" font-size="12" text-anchor="middle">1:N</text>
+  <text x="240" y="400" font-family="Arial" font-size="10">authoredComments</text>
+
+  <!-- Comment-Comment (self-reference) -->
+  <path d="M 530,430 Q 570,430 570,470 Q 570,510 530,510" stroke="#4682b4" stroke-width="2" fill="transparent"/>
+  <circle cx="530" cy="430" r="5" fill="#4682b4"/>
+  <circle cx="530" cy="510" r="5" fill="white" stroke="#4682b4" stroke-width="2"/>
+  <text x="590" y="470" font-family="Arial" font-size="12" text-anchor="middle">1:N</text>
+  <text x="600" y="490" font-family="Arial" font-size="10">replies</text>
+</svg>

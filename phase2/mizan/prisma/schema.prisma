@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// { "id": "homework", "label": "Homework" },
+model AssessmentType {
+  id    String @id
+  label String
+}
+
+model User {
+  // No need to make user id automatically generated
+  id                 Int       @id
+  firstName          String
+  lastName           String
+  email              String    @unique
+  password           String
+  role               String
+  program            String
+  // Many-to-many relationship with Section
+  registeredSections Section[] @relation("StudentSections")
+  // One-to-many relationships
+  authoredComments   Comment[] @relation("CommentAuthor")
+}
+
+model Section {
+  crn          String       @id
+  courseCode   String
+  courseName   String
+  creditHours  Int
+  instructorId Int
+  program      String
+  semester     String
+  // Many-to-many relationship with User
+  students     User[]       @relation("StudentSections")
+  // One-to-many relationships
+  assessments  Assessment[]
+  comments     Comment[]
+}
+
+model Assessment {
+  id          Int      @id @default(autoincrement())
+  sectionCRN  String
+  title       String
+  type        String
+  dueDate     DateTime
+  effortHours Int
+  weight      Int
+  // Relation to Section
+  section     Section  @relation(fields: [sectionCRN], references: [crn])
+}
+
+model Comment {
+  id              Int       @id @default(autoincrement())
+  sectionCRN      String
+  authorId        Int
+  title           String
+  content         String
+  createdDate     DateTime
+  replyToCommentId Int?
+  
+  // Relations
+  section         Section   @relation(fields: [sectionCRN], references: [crn])
+  author          User      @relation("CommentAuthor", fields: [authorId], references: [id])
+  replyTo         Comment?  @relation("CommentReplies", fields: [replyToCommentId], references: [id])
+  replies         Comment[] @relation("CommentReplies")
+}
+
+model Semester {
+  id        String  @id
+  label     String
+  isDefault Boolean
+}

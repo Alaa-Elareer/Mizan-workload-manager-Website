@@ -1,0 +1,57 @@
+erDiagram
+    User ||--o{ Comment : "authoredComments"
+    User }|--|| Section : "registeredSections"
+    Section ||--o{ Assessment : "has"
+    Section ||--o{ Comment : "has"
+    Comment ||--o{ Comment : "replies"
+    
+    User {
+        int id PK
+        string firstName
+        string lastName
+        string email
+        string password
+        string role
+        string program
+    }
+    
+    Section {
+        string crn PK
+        string courseCode
+        string courseName
+        int creditHours
+        int instructorId
+        string program
+        string semester
+    }
+    
+    Assessment {
+        int id PK "autoincrement"
+        string sectionCRN FK
+        string title
+        string type
+        datetime dueDate
+        int effortHours
+        int weight
+    }
+    
+    Comment {
+        int id PK "autoincrement"
+        string sectionCRN FK
+        int authorId FK
+        string title
+        string content
+        datetime createdDate
+        int replyToCommentId FK "nullable"
+    }
+    
+    AssessmentType {
+        string id PK
+        string label
+    }
+    
+    Semester {
+        string id PK
+        string label
+        boolean isDefault
+    }
