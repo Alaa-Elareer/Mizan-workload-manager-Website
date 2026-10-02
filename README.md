@@ -1,4 +1,4 @@
-# ميزان Mizān — Academic Workload Manager
+# ميزان Mizān - Academic Workload Manager
 
 > A full-stack web application that helps university students and instructors manage course assessments, track workload, and stay on top of deadlines.
 
